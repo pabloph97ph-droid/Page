@@ -1,0 +1,6 @@
+{
+  "name": "Domínio das Línguas - DDL",
+  "description": "Campanha exclusiva Domínio das Línguas: Fale inglês ainda em 2026. Ganhe uma aula experimental exclusiva.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
