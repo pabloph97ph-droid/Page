@@ -29,6 +29,19 @@ export default function App() {
 
   // Direct WhatsApp redirection
   const handleConfirmWhatsApp = () => {
+    // Track conversion event on Meta Pixel
+    try {
+      if (typeof window !== 'undefined' && (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq) {
+        (window as unknown as { fbq: (...args: unknown[]) => void }).fbq('track', 'Lead', {
+          content_name: 'Aula de Ingles DDL',
+          content_category: 'WhatsApp Redirect'
+        });
+        (window as unknown as { fbq: (...args: unknown[]) => void }).fbq('track', 'Contact');
+      }
+    } catch {
+      // safe fallback
+    }
+
     // Open WhatsApp directly
     try {
       window.open(WHATSAPP_URL, '_blank');
